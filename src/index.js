@@ -3,11 +3,26 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import web3Reducer from './reducer/web3Reducer';
+import { configureStore } from '@reduxjs/toolkit';
+import { Provider } from 'react-redux';
+import userReducer from './reducer/userReducer';
+import nftReducer from './reducer/nftReducer';
+
+const store = configureStore({
+  reducer: {
+    web3: web3Reducer,
+    user: userReducer,
+    nft: nftReducer,
+  }
+})
 
 ReactDOM.render(
+  <Provider store = {store}>
   <React.StrictMode>
     <App />
   </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 

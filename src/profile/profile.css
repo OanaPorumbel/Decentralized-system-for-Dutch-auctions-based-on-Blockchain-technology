@@ -1,0 +1,259 @@
+.topProfile{
+    overflow: hidden;
+    z-index: -1;
+}
+
+.Profile .topProfile .LeftProfile{
+    position: absolute;
+    width: 35%;
+    height: 90%;
+    overflow: hidden;
+}
+
+.Profile .topProfile .LeftProfile #name{
+    font-size:3.5vh;
+    text-align: center;
+    color:#dab679;
+}
+
+.Profile .topProfile .LeftProfile img{
+    margin-left: 20%;
+    margin-top: 15%;
+    height: 65%;
+    z-index: -1;
+    width: 13%;
+}
+
+.Profile .topProfile .LeftProfile .addCopy{
+    display: flex;
+    margin-left: 25%;
+}
+
+.Profile .topProfile .LeftProfile .addCopy #address{
+    color:#dab679;
+    font-size: 1.5vh;
+    text-align: center;
+}
+
+.Profile .topProfile .LeftProfile .addCopy img{
+    margin-left: 4%;
+    margin-top: 3.2%;
+    width:2.5%;
+    height:2.5%;
+}
+
+.Profile .topProfile .RightProfile{
+    position: absolute;
+    margin-left: 52%;
+    width: 48%;
+    height: 90%;
+    margin-top: 10%;
+    overflow: hidden;
+    
+}
+
+.Profile .topProfile .imgProfile{
+    position: absolute;
+    margin-left: 25%;
+    margin-top: 10.8%;
+    width: 24%;
+    height: 70%;
+
+}
+
+.Profile .topProfile .imgProfile img{
+    width: 100%;
+    height: 100%;
+}
+
+.Profile .topProfile .RightProfile #portfolio_lb, #description_label{
+    font-size: 1.3vw;
+    font-weight: bold;
+    padding-top: 7%;
+}
+
+.Profile .topProfile .RightProfile #description_txt{
+    height: auto;
+    width: 70%;
+}
+
+.Profile .topProfile .RightProfile .s{
+    display: inline;
+    padding-top: 10%;
+}
+
+.Profile .topProfile .RightProfile .s #img1{
+    height: 4%;
+    display: inherit;
+    padding-top: 10%;
+}
+
+.Profile .topProfile .RightProfile .s #img2{
+    margin-left: 20%;
+    height: 4%;
+    display: inherit;
+    padding-top: 10%;
+}
+
+.Profile .topProfile .RightProfile .s #facebook_txt{
+    display: inherit;
+    padding-top: 10%;
+}
+
+.Profile .topProfile .RightProfile .s #twitter_txt{
+    display: inherit;
+    padding-top: 10%;
+}
+
+.Profile .topProfile .RightProfile p a{
+    text-decoration: none;
+    color:black;
+}
+
+.Profile .topProfile button{
+    position: absolute;
+    margin-left: 91%;
+    margin-top: 1.5%;
+    font-size: 1.1vw;
+    color:#dab679;
+    background-color: transparent;
+    border: none;
+}
+
+.Profile .profileCollection{
+    background-color: #FCF8F2;
+}
+
+.Profile .profileCollection h1{
+    text-align: center;
+    padding-top: 3%;
+    padding-bottom: 0%;
+}
+
+.Profile .profileCollection .ContainerCollection{
+    width: 95%;
+    margin: 2.5%;
+    height: auto;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    z-index: -1;
+}
+
+
+.Profile .profileCollection  .ContainerCollection .grid-box{
+    margin:10%;
+    position: relative;
+    cursor: pointer;
+    max-width: 250px;
+}
+
+.Profile .profileCollection .card {
+  -webkit-box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+  border: 0;
+  font-weight: 400
+}
+
+.Profile .profileCollection .card {
+  position: relative;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .4rem;
+  
+}
+
+.Profile .profileCollection .card:hover{
+  transform: scale(1.1);
+  
+}
+
+.Profile .profileCollection .imgCard{
+  border-bottom: 2px solid;
+  padding-top: 3%;
+  padding-bottom: 6%;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to left,#ffffff,#c0bdbe,#c0bdbe, #c0bdbe, #c0bdbe, #ffffff);
+}
+
+.Profile .profileCollection .grid-img{
+  height: 160px;
+  position: relative;
+  position: relative;
+  background: center center no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin: auto;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+
+}
+
+.Profile .profileCollection .grid-img img{
+  width: auto;
+  height: 100%;
+  display: block;
+  margin: auto;
+  max-width: 253px;
+  max-height: 160px;
+  position: relative;
+  -webkit-box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+  
+}
+
+.Profile .profileCollection .infoCard .title-name{
+  border-bottom: 2px solid;
+  padding-top: 3%;
+  text-align: center;
+  padding-bottom: 6%;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to left,#ffffff,#c0bdbe,#c0bdbe, #c0bdbe, #c0bdbe, #ffffff);
+}
+
+.Profile .profileCollection .infoCard .title-name p{
+  margin:0;
+  padding: 0;
+}
+
+.Profile .profileCollection .infoCard .title-name #nickname{
+  font-style: italic;
+}
+
+.Profile .profileCollection .infoCard .description{
+  padding-top: 3%;
+  text-align: center;
+  height: 60px;
+  width: 240px;
+  padding-bottom: 6%;
+  font-size: 0.8vw;
+  margin-left: 4%;
+  margin-right: 4%;
+  overflow: hidden;
+}
+
+.Profile .profileCollection .card button{
+  background-color: #DAB679;
+  border:none;
+  border-radius: 10px;
+  margin-top:1%;
+  margin-bottom: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+  color: white;
+  font-size: 0.8vw;
+  padding: 2%;
+}
+
+.Profile .profileCollection button:active {
+  background-color: white;
+  color:#DAB679;
+}
+

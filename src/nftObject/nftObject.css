@@ -1,0 +1,395 @@
+.nftObject{
+    margin-top: 4%;
+    width: 100%;
+    height: auto;
+} 
+
+.nftObject .navbar{
+    border-bottom: 2px solid #021924;
+}
+
+.containerFluid{
+    width: 100%;
+    
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.top{
+    display: flex;
+    margin: 0 auto;
+    padding-bottom: 47px;
+    color: #fff;
+    left: 0px;
+    right: 0px;
+    background: linear-gradient(180deg, #042A3D 0%, #0C445B 53.48%);
+}
+
+.topImage{
+    width: 50%;
+    position: relative;
+    padding-top: 3%;
+    padding-bottom: 1%;
+}
+
+.topImage .grid-img{
+    height: 480px;
+    position: relative;
+    background: center center no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: auto;
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+}
+
+.topImage .grid-img img{
+    width: auto;
+    height: 100%;
+    display: block;
+    margin: auto;
+    max-width: 700px;
+    max-height: 480px;
+    position: relative;
+    -webkit-box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    border:10px solid white;
+    
+}
+
+.topImage .arrow{
+    position: absolute;
+    bottom: -42px;
+    background-color: #0D455C;
+    border-radius: 50%;
+    width: 74px;
+    height: 74px;
+    left: 300px;
+    transform: translateY(50%);
+    display: block;
+}
+
+.topImage .arrow img{
+    position: relative;
+    margin-left: auto;
+    height: 65%;
+    margin-right: auto;
+    display: block;
+    animation: slide1 2s ease-in-out infinite;
+}
+
+@keyframes slide1 {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+  
+    50% {
+      transform: translate(0, 10px);
+    }
+  }
+
+.topDetails{
+    width: 50%;
+    height: auto;
+}
+
+.topDetails h1{
+  position: relative;
+  margin-left: 10%;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 3vw;
+}
+
+.topDetails .buy{
+  position: relative;
+    border:1px solid #dab679b0;
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    padding: 0.5%;
+    border-radius: 6px;
+}
+
+.topDetails button{
+    height: 50px;
+    background-color: #DAB679;
+    border-radius: 6px;
+    color: #333333;
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+    width: 100%;
+}
+
+.topDetails .creator{
+  position: relative;
+  display: flex;
+  margin-left: 10%;
+  margin-top: 5%;
+}
+
+.topDetails .creator:hover{
+  cursor: pointer;
+}
+
+.topDetails .creator .detailsCreator h3{
+  margin:0;
+  margin-left: 15% !important;
+  padding:2%;
+  font-size:1.2vw;
+  font-weight: normal;
+  
+}
+
+.topDetails .creator .detailsCreator #owner{
+  color:#DAB679;
+}
+
+.topDetails .status{
+  position: relative;
+  margin-top:1%;
+  margin-left: 10%;
+}
+
+.topDetails .status h3{
+  font-size:1.5vw;
+  margin-bottom: 1% !important;
+  padding-bottom: 0 !important;
+  font-weight: normal;
+}
+
+.topDetails .status .price{
+  display: flex;
+}
+
+.topDetails .status .price  .eth {
+  margin-top: 1.5%;
+  height: 5%;
+  width: 3%;
+}
+
+.topDetails .status .price  .eth  img{
+  height: 5%;
+  width: 100%;
+}
+
+.topDetails .status .price p{
+  margin-left: 2% !important;
+  font-size: 2.4vw;
+  padding: 0;
+  margin:0;
+  
+}
+
+
+.down{
+    display: flex;
+    background-color: rgb(255, 248, 238);
+    overflow: hidden;
+}
+
+.down .leftDown{
+    width: 50%;
+    height: auto;
+}
+
+.down .leftDown .description{
+  position: relative;
+  margin-left: 10%;
+  margin-top: 5%;
+  width: 70%;
+  max-height: 400px;
+  overflow: auto;
+}
+
+.down .leftDown .description h1{
+  font-size:2.3vw;
+  font-weight: 600;
+}
+
+.down .leftDown .description p{
+  font-size: 1.2vw;
+}
+
+.down .leftDown .details{
+  position: relative;
+  margin-left: 10%;
+  margin-top: 10%;
+  width: 70%;
+}
+
+.down .leftDown .details h1{
+  font-size:2.3vw;
+  font-weight: 600;
+}
+
+
+.down .leftDown .details .det h4{
+  font-size:1.1vw;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+  margin-top: 2%;
+  color: #021924;
+}
+
+.down .leftDown .details .det p{
+  color: rgba(45, 56, 70, 0.671);
+  font-size: 0.9vw;
+  text-align: right;
+}
+
+.down .leftDown .details .contractAddress{
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding: 3px 0px;
+}
+.down .leftDown .details .token{
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding: 3px 0px;
+}
+.down .leftDown .details .blockchain{
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  padding: 3px 0px;
+}
+
+.down .rightDown{
+  width: 50;
+
+}
+
+.down .rightDown img{
+  margin-top: 4%;
+  margin-left: 10%;
+  opacity: 0.1;
+}
+
+.top .topDetails .startDetails{
+  margin-left: 10%;
+  margin-top: 12%;
+}
+
+.top .topDetails .startDetails p{
+ padding:0;
+ color:#DAB679;
+ margin:0;
+ font-size: 1.3vw;
+ font-weight: 300;
+}
+
+.top .topDetails .creator  .startPrice{
+  display: flex;
+}
+
+.top .topDetails .creator  .startPrice p{
+  color:white;
+  font-size:1vw
+}
+
+.top .topDetails .creator .startTime{
+  display: inline;
+  margin-left: 30%;
+}
+
+.top .topDetails .startPrice #price{
+  margin-left: 3%;
+}
+
+.top .topDetails .creator .startTime p{
+  color:#DAB679;
+  font-size: 1.1vw;
+  margin:0;
+  padding:0;
+}
+
+.top .topDetails .creator .startTime #price{
+  color:white;
+  font-size: 1vw;
+  font-weight: 300;
+  margin-left: 14%;
+}
+
+.buy button{
+  cursor: pointer;
+}
+
+#finished{
+  margin-left:10%;
+  margin-top: 20%;
+  border: 1px solid #dab679be;
+  width: 70%;
+  height: 10vh;
+  border-radius: 20px;
+}
+
+#finished p{
+  color: #DAB679;
+  font-size: 2vw;
+  text-align: left;
+  text-align: center;
+  margin: 0;
+  margin-top: 3% !important;
+  padding: 0;
+}
+
+#soldTo {
+  margin-left:6%;
+  margin-top: 1%;
+  width: 80%;
+  height: 6vh;
+}
+
+#soldTo:hover{
+  cursor: pointer;
+}
+
+#soldTo p{
+  font-size: 1.2vw;
+  text-align: center;
+}
+
+.topDetails .putOnMarket{
+    position: relative;
+    border:1px solid #dab679d3;
+    margin-top: 30%;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    padding: 0.5%;
+    border-radius: 6px;
+}
+
+.putOnMarket button{
+  background-color: transparent;
+  color: #DAB679;
+  border: 1 px solid #DAB679;
+}
+
+.upscale{
+  margin-left:16%;
+  margin-top: 4%;
+  width: 8%;
+  height: 8%;
+}
+
+.upscale img{
+  position: relative;
+  width: 80%;
+}
+
+.chart{
+  width: 700px;
+  height: 500px;
+}

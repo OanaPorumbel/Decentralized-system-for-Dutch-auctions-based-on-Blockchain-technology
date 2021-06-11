@@ -1,0 +1,135 @@
+.Collection{
+    background-color: #FCF8F2;
+    margin-top: 4%;
+    width: 100%;
+    height: auto;
+    min-height: 99vh;
+}
+
+  .Collection .ContainerCollection{
+      width: 95%;
+      padding-top: 2% !important;
+      margin: 2.5%;
+      height: auto;
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      z-index: -1;
+  }
+  
+
+  .Collection  .ContainerCollection .grid-box{
+      margin:10%;
+      position: relative;
+      cursor: pointer;
+      max-width: 250px;
+  }
+
+  .card {
+    -webkit-box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    border: 0;
+    font-weight: 400
+  }
+
+  .card {
+    position: relative;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .4rem;
+    
+}
+
+.card:hover{
+    transform: scale(1.1);
+    
+}
+
+.imgCard{
+    border-bottom: 2px solid;
+    padding-top: 3%;
+    padding-bottom: 6%;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to left,#ffffff,#c0bdbe,#c0bdbe, #c0bdbe, #c0bdbe, #ffffff);
+}
+
+.grid-img{
+    height: 160px;
+    position: relative;
+    background: center center no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: auto;
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+
+}
+
+.grid-img img{
+    width: auto;
+    height: 100%;
+    display: block;
+    margin: auto;
+    max-width: 253px;
+    max-height: 160px;
+    position: relative;
+    -webkit-box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    
+}
+
+.infoCard .title-name{
+    border-bottom: 2px solid;
+    padding-top: 3%;
+    text-align: center;
+    padding-bottom: 6%;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to left,#ffffff,#c0bdbe,#c0bdbe, #c0bdbe, #c0bdbe, #ffffff);
+}
+
+.infoCard .title-name p{
+    margin:0;
+    padding: 0;
+}
+
+.infoCard .title-name #nickname{
+    font-style: italic;
+}
+
+.infoCard .description{
+    padding-top: 3%;
+    text-align: center;
+    height: 60px;
+    width: 240px;
+    padding-bottom: 6%;
+    font-size: 0.8vw;
+    margin-left: 4%;
+    margin-right: 4%;
+    overflow: hidden;
+}
+
+.card button{
+    background-color: #DAB679;
+    border:none;
+    border-radius: 10px;
+    margin-top:1%;
+    margin-bottom: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    color: white;
+    font-size: 0.8vw;
+    padding: 2%;
+}
+
+button:active {
+    background-color: white;
+    color:#DAB679;
+  }
+

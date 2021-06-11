@@ -1,0 +1,103 @@
+.EditProfile{
+    overflow: hidden;
+}
+
+.EditProfile .EditLeftProfile{
+    position: absolute;
+    width: 35%;
+    height: 90%;
+}
+
+.EditProfile .EditLeftProfile #title{
+    font-size:2.2vw;
+    text-align: left;
+    color:#dab679;
+    margin-left: 15%;
+    margin-bottom: 1%;
+}
+
+
+.EditProfile .EditLeftProfile #text{
+    color:#dab679;
+    font-size: 0.9vw;
+    text-align: left;
+    margin-left: 15%;
+    margin-top:0;
+    margin-bottom: 0;
+}
+
+.EditProfile .EditLeftProfile  .imgEditProfile{
+    margin-left: 22%;
+    margin-top: 7%;
+    width: 60%;
+    height: 70%;
+}
+
+.EditProfile .EditLeftProfile  .imgEditProfile img{
+    width: 100%;
+    height: 100%;
+}
+
+.EditProfile .EditLeftProfile .formImg input{
+    margin-left: 30%;
+    margin-top:1;
+    background-color: #dab679;
+}
+
+.EditProfile .EditLeftProfile .formImg{
+    margin-top:0;
+}
+
+.EditProfile .formImg button{
+    color: black;
+    margin-left:230%;
+    font-size: 1.2vw;
+    margin-top:-20%;
+    background-color: #042a3d;
+    color:#dab679;
+    height: 7vh;
+    width: 12vw;
+    border-radius: 30px;
+}
+
+
+.EditProfile .EditRightProfile{
+    position: absolute;
+    margin-left: 40%;
+    width: 48%;
+    height: 90%;
+    margin-top:3%;
+}
+
+
+.EditProfile .EditRightProfile #portfolio_lb, #description_lb2, #username_lb, #facebook_lb, #twitter_lb{
+    font-size: 1.2vw;
+    font-weight: 600;
+    padding-top: 5%;
+}
+
+
+.EditProfile .EditRightProfile input{
+    width: 50%;
+    color:black;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1.5px solid rgb(53, 53, 54) !important;
+}
+
+.EditProfile .EditRightProfile input[name="description"]{
+    width: 90%;
+}
+
+.EditProfile .EditRightProfile input, textarea, select { 
+    outline: none;
+}
+
+
+.EditProfile .EditRightProfile  #img1{
+    height: 4%;
+}
+
+.EditProfile .EditRightProfile  #img2{
+    height: 4%;
+}

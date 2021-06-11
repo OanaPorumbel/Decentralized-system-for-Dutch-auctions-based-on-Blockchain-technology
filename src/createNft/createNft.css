@@ -1,0 +1,176 @@
+.createNft{
+  position: absolute;
+  width: 100%;
+  background: linear-gradient(45deg, #1e7cac, #0f5c83, #063a53, #042a3d);
+  background-size: 100% 100%;
+  animation: gradient 15s ease infinite;
+  z-index:-20;
+  overflow: hidden;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.createNft .leftNftCreate{
+    margin-top: 4%;
+    width: 55%;
+    height:98vh;
+}
+
+.createNft .leftNftCreate h2{
+    margin-left: 10%;   
+    padding-top: 4%;
+}
+
+.createNft .leftNftCreate .uploadDiv{
+    border:2px dashed rgb(150, 146, 146);
+    width: 60%;
+    height: 25vh;
+    border-radius: 10px;
+    margin-left: 15%;
+}
+
+
+.createNft .leftNftCreate #title_lb, #description_lb, #upload_lb{
+    font-size: 1.2vw;
+    font-weight: 600;
+    padding-top: 5%;
+    margin-left: 15%;
+}
+
+
+.createNft .leftNftCreate input[type=text]{
+    width: 55%;
+    color:black;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid rgb(186, 186, 199) !important;
+    margin-left: 15%;
+}
+
+.createNft .leftNftCreate input:focus{
+    outline: none;
+}
+
+.createNft .leftNftCreate .uploadDiv p{
+    margin-top: 5%;
+    text-align: center;
+    color: rgb(168, 173, 180);
+    padding-bottom: 3%;
+}
+
+.createNft .leftNftCreate .uploadDiv button{
+  background-color: #fffcf9;
+  border:none;
+  height: 6vh;
+  width: 3vw;
+  margin-left: 87%;
+  border-radius: 100px;
+  margin-top: 1%;
+  font-size: 1.1vw;
+  font-weight: bold;
+  border: 1px solid rgba(44, 58, 65, 0.39);
+}
+
+.createNft .leftNftCreate .uploadDiv button img{
+height: 50%;
+margin-top: 10%;
+margin-left: 10%;
+}
+
+.createNft .leftNftCreate .uploadDiv .custom-file-input {
+    color: transparent;
+  }
+.createNft .leftNftCreate .uploadDiv .custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+  .createNft .leftNftCreate .uploadDiv .custom-file-input::before {
+    content: 'Choose file';
+    color: #042a3d;
+    border:none;
+    padding-top:5%;
+    padding-bottom: 5%;
+    display: block;
+    text-align: center;
+    width: 6vw;
+    border-radius: 25px;
+    margin-left: 63%;
+    background-color: #e6d7bf;
+  }
+  .createNft .leftNftCreate .uploadDiv .custom-file-input:hover::before {
+    border-color: black;
+  }
+  .createNft .leftNftCreate .uploadDiv .custom-file-input:active {
+    outline: 0;
+  }
+  .createNft .leftNftCreate .uploadDiv .custom-file-input:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); 
+  }
+
+
+   .createNft .leftNftCreate button{
+      background-color: #dab679;
+      border:none;
+      height: 7vh;
+      width: 13vw;
+      margin-left: 5%;
+      border-radius: 40px;
+      margin-top: 1%;
+      font-size: 1.1vw;
+      font-weight: bold;
+      color:#042a3d;
+  } 
+  .createNft .leftNftCreate button:active {
+    background-color: #042a3d;
+    color: #dab679;
+  }
+ 
+  .blob {
+    position: absolute;
+    top: 40%;
+    left:15%;
+    fill: #ffffff;
+    width: 80vmax;
+    z-index: -1;
+    animation: move 10s ease-in-out infinite;
+    transform-origin: 30% 30%;
+    transform: rotate(-180deg);
+  }
+
+  .createNft #circle{
+    position: absolute;
+    margin-left: 48%;
+    margin-top:-46%;
+    height: 90%;
+    width: 30%;
+  }
+
+  .createNft #circle img{
+    position: absolute;
+    margin-left: 80%;
+    height: 90%;
+    opacity: 0.6;
+  }
+
+  .htmlClass{
+    color:#dab679 !important;
+    font-size: 1vw;
+  }
+
+  .htmlClass #ceva{
+    color:rgb(44, 43, 43) !important;
+  }
+
+  .iconClass{
+    border-color:#dab679 !important;
+    color: #dab679 !important;
+  }
