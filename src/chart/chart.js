@@ -1,22 +1,42 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "./chart.css";
 import { Line } from "react-chartjs-2"
+import { connect } from 'react-redux';
 
 
-function Chart ({ duration, maxPrice, minPrice })  {
+function Chart ({ duration, maxPrice, minPrice, timer })  {
 
     const x = []
-    for (let i = 1; i <= 7; i++){
-        x.push(Math.floor(duration / 420 * i) + " min")
+    const timeElapsed = duration - timer;
+
+    let [yAxis, setYAxis] = useState([])
+    const calculateY = () => {
+        let i = 0;
+        let y = []
+        let tick = duration / 7
+        while (tick * i <= timeElapsed){
+            let pointY = tick * i * (minPrice - maxPrice) / duration + maxPrice
+            y.push(pointY)
+            i += 1
+        }
+        return y;
     }
+    for (let i = 0; i <= 7; i++){
+        x.push(Math.floor(duration / 396 * i) + " min")
+    }
+
+    useEffect( () => {
+        setYAxis(calculateY())
+    }, [timer])
+
     
     const data={
-        labels: x, //duration
+        labels: x, 
         datasets:[
             {
                 label: "Current price of auction",
-                data:[15, 14, 13, 12], //price
-                borderColor: ["#0D455C"]
+                data: yAxis, 
+                borderColor: ["#0d465cc5"]
             }
         ]
     };
@@ -27,6 +47,9 @@ function Chart ({ duration, maxPrice, minPrice })  {
                 min: minPrice, 
                 max: maxPrice
             }
+        },
+        animation: {
+            duration: 0
         }
     };
 
@@ -35,4 +58,10 @@ function Chart ({ duration, maxPrice, minPrice })  {
     );
 };
 
-export default Chart;
+const mapStateToProps = (state) => {
+    return {     
+        timer: state.timer.timer
+    }
+}
+
+export default connect(mapStateToProps, null)(Chart);

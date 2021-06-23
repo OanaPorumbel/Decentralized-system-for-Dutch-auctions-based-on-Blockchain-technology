@@ -79,7 +79,7 @@
 
 .EditProfile .EditRightProfile input{
     width: 50%;
-    color:black;
+    color:rgb(56, 54, 54);
     background-color: transparent;
     border: none;
     border-bottom: 1.5px solid rgb(53, 53, 54) !important;

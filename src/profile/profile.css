@@ -40,6 +40,8 @@
     margin-top: 3.2%;
     width:2.5%;
     height:2.5%;
+    z-index: 1;
+    cursor: pointer;
 }
 
 .Profile .topProfile .RightProfile{
@@ -77,6 +79,10 @@
     width: 70%;
 }
 
+.Profile .topProfile .RightProfile #portfolio_txt a{
+  color: rgb(43, 49, 54);
+}
+
 .Profile .topProfile .RightProfile .s{
     display: inline;
     padding-top: 10%;
@@ -86,6 +92,7 @@
     height: 4%;
     display: inherit;
     padding-top: 10%;
+    cursor: pointer;
 }
 
 .Profile .topProfile .RightProfile .s #img2{
@@ -93,6 +100,7 @@
     height: 4%;
     display: inherit;
     padding-top: 10%;
+    cursor: pointer;
 }
 
 .Profile .topProfile .RightProfile .s #facebook_txt{

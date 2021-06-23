@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
+import { setTimer } from "../reducer/timeReducer"
 
-const Timer = ({ finishTime }) => {
+const Timer = (props) => {
 
-    let [secondsLeft, setSecondsLeft] = useState(finishTime - Date.now() / 1000);
+    let [secondsLeft, setSecondsLeft] = useState(props.finishTime - Date.now() / 1000);
     let timerInterval;
 
     const timerFunction = () => {
@@ -12,8 +14,9 @@ const Timer = ({ finishTime }) => {
     }
 
     const timeLeft = () => {
-        const secondsLeftAux = (finishTime - Math.floor(Number(Date.now()) / 1000))
+        const secondsLeftAux = (props.finishTime - Math.floor(Number(Date.now()) / 1000))
         setSecondsLeft(secondsLeftAux)
+        props.setTimer(secondsLeftAux)
     }
 
     const displaySecondsLeft = (secondsLeft) => {
@@ -30,7 +33,7 @@ const Timer = ({ finishTime }) => {
         timerFunction();
         return function cleanup() {
             clearInterval(timerInterval)
-        }
+        } 
     })
 
     return (
@@ -40,4 +43,19 @@ const Timer = ({ finishTime }) => {
     );
 };
 
-export default Timer;
+
+const mapStateToProps = (state) => {
+    return {
+        address: state.web3.address,
+        network: state.web3.network,
+        user: state.user.user,
+        nft: state.nft.nft,
+        timer:state.timer.timer,
+    }
+}
+
+const mapDispatchToProps = {
+    setTimer
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Timer);

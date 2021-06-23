@@ -6,15 +6,25 @@ import imgNft from "../commons/images/arrownft.png";
 import ReactRoundedImage from "react-rounded-image";
 import blob from "../commons/images/blob.svg";
 import { connect } from 'react-redux';
-import { address as addressNFT } from "../contract";
 import ModalSell from "../modalSell/modalSell";
 import upscale from "../commons/images/upscale.png"
+import { abi, address } from "../auctionContract";
+import { abi as abiNFT, address as addressNFT } from "../contract";
+import Web3 from 'web3';
+import { useHistory } from 'react-router-dom';
+
 
 const NftObjectSimple = ({nft}) => {
 
+    let web3 = new Web3(window.web3.currentProvider);
+    let contract = new web3.eth.Contract(abi, address);
+    let contractNFT = new web3.eth.Contract(abiNFT, addressNFT);
+    const history=useHistory();
     let [username, setUsername] = useState();
     let [userImage, setUserImage] = useState();
     let [showSellModal, setShowSellModal] = useState(false);
+    let [blockNFT, setBlockNFT] = useState();
+    let [listHistory, setListHistory] = useState([]);
 
     const showModal = () => {
         setShowSellModal(true);
@@ -23,6 +33,9 @@ const NftObjectSimple = ({nft}) => {
      const hideModal = () => {
         setShowSellModal(false);
      }
+
+     console.log("HEI");
+    
     
     useEffect( () => {
         axios.get("/user/" + nft.owner)
@@ -32,11 +45,59 @@ const NftObjectSimple = ({nft}) => {
         }).catch (error => {
             console.log(error);
         });
+
+        getTransactions()
         
     }, [nft.owner])
-    
 
-    console.log(nft);
+    const getTransactions = async () => {
+        let list=[];
+        await contractNFT.getPastEvents('Mint', {fromBlock: 0, toBlock: 'latest'}, function(error, events) {
+            let mintEvents = events.filter( (event) => event.returnValues.tokenId === nft.tokenId)
+            setBlockNFT(mintEvents[0].blockNumber);
+            list.push({
+                "nameEvent": "Created",
+                "transactionHash": mintEvents[0].transactionHash,
+                "price": null,
+                "soldTo": null
+            })
+        })
+        
+        await contract.getPastEvents('allEvents', {fromBlock: 0, toBlock: 'latest'}, function(error, events) {
+            let auctionEvent = events.filter( (event) => event.returnValues.tokenId === nft.tokenId)
+            for(let i=0; i<auctionEvent.length;i++){
+                if(auctionEvent[i].event==="AuctionCreated"){
+                    list.push({
+                        "nameEvent": "Listed",
+                        "transactionHash": auctionEvent[i].transactionHash,
+                        "price": parseFloat(web3.utils.fromWei(auctionEvent[i].returnValues.startPrice.toString(), "ether")).toFixed(2) + " ETH",
+                        "soldTo": null
+                    })   
+                }
+                if(auctionEvent[i].event==="AuctionSuccessful"){
+                    list.push({
+                        "nameEvent": "Sold",
+                        "transactionHash": auctionEvent[i].transactionHash,
+                        "price": parseFloat(web3.utils.fromWei(auctionEvent[i].returnValues.totalPrice.toString(), "ether")).toFixed(2) + " ETH",
+                        "soldTo":  "to " + auctionEvent[i].returnValues.winner
+                    })   
+                }
+                
+            }
+            
+        })
+        setListHistory(list)
+        console.log(list);
+
+    }
+
+    const goToProfile = (e) => {
+        console.log(e.split(" ")[1]);
+        history.push(`/profile/${e.split(" ")[1]}`)
+    }
+
+   
+    
     const handleScaleImage = () => {
         window.open(nft.image);
     }
@@ -110,7 +171,24 @@ const NftObjectSimple = ({nft}) => {
                         </div>
                     </div>
                     <div className="rightDown">
+                       
+                        <div className="buttons">
+                            <button className="btnTH" >Trade History</button>
+                        </div>
                         <img src={blob} alt="svg"/>
+                        <div className="chart">
+                            <ul>
+                                {listHistory.map(item => (
+                                <div id="li"> 
+                                <div id="left">
+                                    <h1>{item.nameEvent}</h1>
+                                    <p onClick={goToProfile.bind(this, item.soldTo)}> {item.soldTo}</p>
+                                </div>
+                                <p>{item.price}</p>
+                                </div>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>  

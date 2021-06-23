@@ -14,7 +14,7 @@ const Auth = (props) => {
     const account = localStorage.getItem("account");
     let [image, setImage] = useState();
     const address = localStorage.getItem("address");
-    console.log(props.user);
+    //console.log(props.user);
 
 
     useEffect( async (props) => {

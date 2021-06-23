@@ -8,12 +8,14 @@ import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import userReducer from './reducer/userReducer';
 import nftReducer from './reducer/nftReducer';
+import timeReducer from './reducer/timeReducer';
 
 const store = configureStore({
   reducer: {
     web3: web3Reducer,
     user: userReducer,
     nft: nftReducer,
+    timer: timeReducer
   }
 })
 

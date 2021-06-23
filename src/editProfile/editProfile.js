@@ -135,17 +135,17 @@ const EditProfile = () => {
             </div>
             <div className="EditRightProfile">
                 <p id="username_lb">Display name</p>
-                <input type="text" name="username" placeholder={username} onChange = {changeHandler}></input>
+                <input type="text" name="username" placeholder={username} value={username} onChange = {changeHandler}></input>
                 <p id="portfolio_lb">Portfolio</p>
-                <input type="text" name="portfolio" placeholder={portfolio} onChange = {changeHandler}></input>
+                <input type="text" name="portfolio" placeholder={portfolio} value={portfolio} onChange = {changeHandler}></input>
                 <p id="description_lb2">Description</p>
-                <input type="text" name="description" placeholder={description} onChange = {changeHandler}></input>
+                <input type="text" name="description" placeholder={description} value={description} onChange = {changeHandler}></input>
                 <p id="facebook_lb">Facebook Account</p>
                 <img id="img1" src={fb} alt="img"/>
-                <input type="text" name="facebook" placeholder={facebook} onChange = {changeHandler}></input>
+                <input type="text" name="facebook" placeholder={facebook} value={facebook} onChange = {changeHandler}></input>
                 <p id="twitter_lb">Twitter Account</p>
                 <img id="img2" src={tw} alt="img"/>
-                <input type="text" name="twitter" placeholder={twitter} onChange = {changeHandler}></input>
+                <input type="text" name="twitter" placeholder={twitter} value={twitter} onChange = {changeHandler}></input>
                
                 
             </div>

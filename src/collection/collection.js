@@ -39,7 +39,7 @@ const Collection = (props) => {
                  const ipfss = await Promise.all(tokens.map( async (item) => {
                  let ipfs = await contract.methods.tokenURI(item).call();
                  let ownerAddress= await contract.methods.ownerOf(item).call();
-                 console.log(ownerAddress)
+                 //console.log(ownerAddress)
                   return {
                       "owner": ownerAddress,
                       "ipfs": ipfs,
@@ -59,7 +59,7 @@ const Collection = (props) => {
                     owner
                   }
                 })
-                console.log(obj);
+                //console.log(obj);
                 return obj;
               }))
               console.log(nftsDetails);

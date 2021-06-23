@@ -20,7 +20,6 @@ const ModalSell = ({ handleClose, showSellModal, children, image, tokenId }) => 
        modal="ModalSell";
     }
 
-    console.log(tokenId);
 
     let [startPrice, setStartPrice] = useState(0);
     let [endPrice, setEndPrice] = useState(0);
@@ -44,20 +43,24 @@ const ModalSell = ({ handleClose, showSellModal, children, image, tokenId }) => 
         }
     }
 
+   
+
     const handleSubmit = async () => {
 
         const receipt = await contract.methods.createAuction(tokenId, web3.utils.toWei(startPrice.toString(), "ether"), web3.utils.toWei(endPrice.toString(), "ether"), (duration*3600)).send({ from: logged});
-        //const receipt = await contract.methods.createAuction(tokenId, startPrice, endPrice, duration).send({ from: logged});
         await contractNFT.methods.approve(contract.options.address, tokenId).send({ from: localStorage.getItem("address") })
-        console.log(receipt);
-        console.log(receipt.events.AuctionCreated.returnValues);
+        
         Swal.fire({
-            text: 'Auction created succesfully!',
+            title: 'Auction created succesfully!',
             imageUrl: imgAlert,
             imageWidth: 100,
             imageHeight: 100,
             imageAlt: 'Custom image',
-          })
+            html: `<p>Block Number: ${receipt.blockNumber} </p><p>Gas Consumed: ${receipt.cumulativeGasUsed}</p><p>Block Hash: ${receipt.blockHash}</p><p>Transaction Hash: ${receipt.transactionHash}</p>`,
+            customClass: {  
+                      htmlContainer: 'htmlClass',     
+                    }
+        })
     }
 
     return (
@@ -76,11 +79,11 @@ const ModalSell = ({ handleClose, showSellModal, children, image, tokenId }) => 
                 <div className="rightSell">
                     <form id="form-sell" >
                         <label for="startPrice">Start price</label>
-                        <input type="text" id="startPriceI" name="startPrice" onChange = {changeHandler}></input>
+                        <input type="text" id="startPriceI" name="startPrice" onChange = {changeHandler} placeholder="ETH"></input>
                         <label for="minimumPrice">Minimum price</label>
-                        <input type="text" id="minimumPriceI" name="minimumPrice" onChange = {changeHandler}></input>
+                        <input type="text" id="minimumPriceI" name="minimumPrice" onChange = {changeHandler} placeholder="ETH"></input>
                         <label for="expirationDate">Expiration date</label>
-                        <input type="text" id="expirationDateI" name="expirationDate" onChange = {changeHandler}></input>
+                        <input type="text" id="expirationDateI" name="expirationDate" onChange = {changeHandler} placeholder="Hours"></input>
                     </form>
                         <button id="sellbtn" onClick = {handleSubmit}>Put on market</button>
 
